@@ -20,8 +20,13 @@ export default class Index extends React.Component {
         </header>
         <div className="Grid">
           <Card />
-          <Card />
-          <Card />
+          {
+            this.props.cards.map((card) => (
+              <Card
+                key={card.id}
+              />
+            ))
+          }
         </div>
       </div>
     )
