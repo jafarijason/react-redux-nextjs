@@ -1,38 +1,23 @@
-import React from 'react'
-import './index.css'
+import Link from 'next/link';
+import './index.css';
 import Card from './Card';
-import data from '../data/data.json'
 
-export default class Index extends React.Component {
-  static async getInitialProps() {
-    // for more information https://github.com/vercel/next.js/blob/canary/examples/data-fetch/pages/index.js
-    return { cards: data }
-  }
-
-  render() {
-    return (
-      <div className="App">
+export default () => (
+    <div className="App">
         <header className="App-header">
-          <img
-            src="/static/logo.png"
-            className="static-logo"
-            alt="logo"
-          />
+            <Link href="/page2">            
+                <img src="/static/logo.png"
+                className="static-logo" alt="logo"
+                />
+            </Link>
         </header>
         <div className="Grid">
-          <Card />
-          {
-            this.props.cards.map((card) => (
-              <Card
-                key={card.id}
-              />
-            ))
-          }
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
         </div>
-      </div>
-    )
-  }
-
-}
-
-
+    </div>
+)
