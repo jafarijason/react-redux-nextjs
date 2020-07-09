@@ -5,6 +5,7 @@ import data from '../data/data.json'
 
 export default class Index extends React.Component {
   static async getInitialProps() {
+    // for more information https://github.com/vercel/next.js/blob/canary/examples/data-fetch/pages/index.js
     return { cards: data }
   }
 
