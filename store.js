@@ -19,12 +19,29 @@ export const initialCards = () => {
   };
 };
 
-export const addItem = (item) =>{
-  return{
-    type:'ADD',
-    item
+export const addItem = (item) => {
+  return {
+    type: "ADD",
+    item,
+  };
+};
+
+// reducers
+export const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "INITIALCARDS":
+      return {
+        cards: action.cards,
+      };
+    case "ADD":
+      return {
+        ...state,
+        cards: [...cards, action.item],
+      };
+    default:
+      return state;
   }
-}
+};
 
 // create store
 export const initStore = (initialState = startState) => {
